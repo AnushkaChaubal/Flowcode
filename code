@@ -1,0 +1,6 @@
+Select c.primary_vertical, s.count_scans
+From codes c join scans s On c.code_id=s.code_id
+Where EXTRACT(MONTH FROM s.date)=7
+Group BY c.primary_vertical,s.count_scans
+Order By s.count_scans desc
+LIMIT 1;
